@@ -48,5 +48,5 @@ app.on("message", message => {
 })
 
 // get the API token from the user
-let token = input("Enter your discord bot token here: ", (x) => {app.login(x)});
+let token = input("Enter your discord bot token here: ", (user_input) => {app.login(user_input)});
 
