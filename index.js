@@ -34,7 +34,7 @@ app.on("message", message => {
 		if (!message.author.bot){
 			
 			// get the redirected link!
-			let r = request.get('https://lichess.org/FG9ewMNwHeND', function (err, res, body) {
+			let r = request.get(message.content, function (err, res, body) {
 
 				// use lichess gif api
 				let rr = res.request.uri.href.replace("https://lichess.org/","")
