@@ -35,12 +35,15 @@ app.on("message", message => {
 			
 			// get the redirected link!
 			let r = request.get(message.content, function (err, res, body) {
-
-				// use lichess gif api
-				let rr = res.request.uri.href.replace("https://lichess.org/","").replace("/black","").replace("/white","")
 				
-				// send the message to the channel
-				message.channel.send("https://lichess1.org/game/export/gif/" + rr + '.gif')
+				// if res exists
+				if (res) {
+					// use lichess gif api
+					let rr = res.request.uri.href.replace("https://lichess.org/","").replace("/black","").replace("/white","")
+
+					// send the message to the channel
+					message.channel.send("https://lichess1.org/game/export/gif/" + rr + '.gif')
+				}
 			});
 
 		}
