@@ -39,6 +39,7 @@ app.on("message", message => {
 				// if res exists
 				if (res) {
 					// use lichess gif api
+					console.log(res.request.uri.href.split(' ')[0])
 					let rr = res.request.uri.href.split(' ')[0].replace("https://lichess.org/","").replace("/black","").replace("/white","")
 
 					// send the message to the channel
