@@ -28,15 +28,17 @@ app.on("message", message => {
 	
 	// for debugging purposes...
 	// console.log(message.content)
-    for (mesg_token in message.content.split(" "))
+    var mesg_tokens = message.content.split(" ");
+    for (i = 0; i < mesg_tokens.length; i++)
     {
-        if (mesg_token.includes("https://lichess.org/" )) {
+        console.log(mesg_tokens[i]);
+        if (mesg_tokens[i].includes("https://lichess.org/" )) {
 
             // if the message is not from the bot!
             if (!message.author.bot){
 
                 // get the redirected link!
-                let r = request.get(mesg_token, function (err, res, body) {
+                let r = request.get(mesg_tokens[i], function (err, res, body) {
 
                     // if res exists
                     if (res) {
