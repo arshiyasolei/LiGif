@@ -3,19 +3,6 @@ let request = require('request');
 let app = new discord.Client()
 let readline = require('readline');
 
-// used for reading line
-let rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-//defining input function
-function input(prompt, callback) {
-    rl.question(prompt, function (x) {
-        rl.close();
-        callback(x);
-    });
-}
 
 app.on("ready", () => {
     app.user.setActivity("taking a break from discord")
